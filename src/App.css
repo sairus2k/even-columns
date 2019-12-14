@@ -1,0 +1,8 @@
+.App {
+  display: flex;
+}
+
+.App p {
+  flex-basis: 100%;
+  padding: 0 10px 0;
+}
