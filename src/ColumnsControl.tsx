@@ -19,7 +19,7 @@ export const ColumnsControl: FC<Props> = ({ onChange }) => {
         const key = i + 1;
         return (
           <button key={key} onClick={handleClick} data-columns={key}>
-            {key} columns
+            {key} column{i > 0 && 's'}
           </button>
         );
       })}

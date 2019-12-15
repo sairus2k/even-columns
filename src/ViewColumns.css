@@ -1,8 +1,9 @@
-.ViewColumns {
+.ViewColumns__columns {
   display: flex;
 }
 
-.ViewColumns p {
+.ViewColumns__columns p {
   flex-basis: 100%;
   padding: 0 10px 0;
+  margin-top: 10px;
 }

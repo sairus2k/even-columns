@@ -26,8 +26,10 @@ export const ViewInput: FC<Props> = ({ onSubmit }) => {
 
   return (
     <div className="ViewInput">
-      <button onClick={handleLayoutClick}>Layout</button>
-      <button onClick={handleLoremClick}>Lorem</button>
+      <div>
+        <button onClick={handleLoremClick}>Lorem</button>
+        <button onClick={handleLayoutClick}>Layout</button>
+      </div>
       <textarea onChange={handleTextChange} value={text} />
     </div>
   );

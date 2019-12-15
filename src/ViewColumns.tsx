@@ -42,9 +42,9 @@ export const ViewColumns: FC<Props> = ({ text }) => {
   };
 
   return (
-    <>
+    <div className="ViewColumns">
       <ColumnsControl onChange={handleColumnsClick} />
-      <div className="ViewColumns">
+      <div className="ViewColumns__columns">
         {texts.map((text, index) => (
           <ContentEditable
             key={text.substring(0, 10)}
@@ -54,6 +54,6 @@ export const ViewColumns: FC<Props> = ({ text }) => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
