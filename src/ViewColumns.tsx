@@ -1,7 +1,10 @@
 import React, { FC, useState } from 'react';
 import './ViewColumns.css';
-import { text as initialText } from './mock';
 import { ContentEditable } from './ContentEditable';
+
+type Props = {
+  text: string;
+};
 
 const NUMBER_OF_COLUMNS = 3;
 
@@ -18,9 +21,9 @@ const divideTextByColumns = (text: string, columnsAmount: number) => {
   });
 };
 
-export const ViewColumns: FC = () => {
-  const [actualText, setActualText] = useState(initialText);
-  const [cacheText, setCacheText] = useState(initialText);
+export const ViewColumns: FC<Props> = ({ text }) => {
+  const [actualText, setActualText] = useState(text);
+  const [cacheText, setCacheText] = useState(text);
   const texts = divideTextByColumns(actualText, NUMBER_OF_COLUMNS);
 
   const handleChangeText = (newText: string, index: number) => {

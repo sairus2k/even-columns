@@ -1,0 +1,9 @@
+.ViewInput {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.ViewInput textarea {
+  height: 100vh;
+}
