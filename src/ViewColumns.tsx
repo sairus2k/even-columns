@@ -2,12 +2,11 @@ import React, { FC, useState, useMemo } from 'react';
 import './ViewColumns.css';
 import { ContentEditable } from './ContentEditable';
 import { ColumnsControl } from './ColumnsControl';
+import { INITIAL_NUMBER_OF_COLUMNS } from './config';
 
 type Props = {
   text: string;
 };
-
-const NUMBER_OF_COLUMNS = 1;
 
 const divideTextByColumns = (text: string, columnsAmount: number) => {
   const quotient = Math.round(text.length / columnsAmount);
@@ -25,7 +24,7 @@ const divideTextByColumns = (text: string, columnsAmount: number) => {
 export const ViewColumns: FC<Props> = ({ text }) => {
   const [actualText, setActualText] = useState(text);
   const [cacheText, setCacheText] = useState(text);
-  const [columnsAmount, setColumnsAmount] = useState(NUMBER_OF_COLUMNS);
+  const [columnsAmount, setColumnsAmount] = useState(INITIAL_NUMBER_OF_COLUMNS);
   const texts = useMemo(() => divideTextByColumns(actualText, columnsAmount), [
     actualText,
     columnsAmount,

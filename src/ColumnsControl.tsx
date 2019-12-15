@@ -1,4 +1,5 @@
 import React, { FC, FormEvent, useCallback } from 'react';
+import { MAX_NUMBER_OF_COLUMNS } from './config';
 
 type Props = {
   onChange: (columns: number) => void;
@@ -14,15 +15,14 @@ export const ColumnsControl: FC<Props> = ({ onChange }) => {
   );
   return (
     <>
-      <button onClick={handleClick} data-columns={1}>
-        1 column
-      </button>
-      <button onClick={handleClick} data-columns={2}>
-        2 columns
-      </button>
-      <button onClick={handleClick} data-columns={3}>
-        3 columns
-      </button>
+      {Array.from({ length: MAX_NUMBER_OF_COLUMNS }, (_b, i) => {
+        const key = i + 1;
+        return (
+          <button key={key} onClick={handleClick} data-columns={key}>
+            {key} columns
+          </button>
+        );
+      })}
     </>
   );
 };
